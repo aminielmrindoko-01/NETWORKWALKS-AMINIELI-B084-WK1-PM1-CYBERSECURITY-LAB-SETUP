@@ -219,7 +219,9 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](4-screenshot-kali-network-settings.png)
+![](screenshot/kali-network-settings.png)
+
+
 ## Step 4: Investigate the Kali Static IP Failure
 
 The original intention was to assign Kali the static IPv4 address `10.0.0.2`.
