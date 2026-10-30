@@ -219,7 +219,7 @@ DNS: 8.8.8.8
 
 A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
 
-![](screenshot/kali-network-settings.png)
+![Kali network](screenshots/kali-network-settings.png)
 
 
 ## Step 4: Investigate the Kali Static IP Failure
