@@ -173,7 +173,7 @@ A shared folder was also configured between Windows and Kali to facilitate file 
 
 ---
 
-## Step 3: Create the NAT Network
+## Step 3.0.: Create the NAT Network
 
 A VirtualBox NAT Network named `NatNetwork` was used for the laboratory.
 
@@ -204,7 +204,22 @@ The command confirmed that `NatNetwork` used the `10.0.0.0/24` network with gate
 > **Filename:** `screenshots/03-natnetwork-settings.png`
 
 ---
+## Step 3.1 : Configure the Kali Linux Network
 
+The Kali Linux network configuration was checked and configured with a consistent IPv4 address.
+
+configuration:
+
+```text
+IP Address: 10.0.0.2
+Subnet Mask: 255.255.255.0
+Gateway: 10.0.0.1
+DNS: 8.8.8.8
+```
+
+A consistent IP address makes it easier to document the lab and reference the Kali machine in future exercises.
+
+![](4-screenshot-kali-network-settings.png)
 ## Step 4: Investigate the Kali Static IP Failure
 
 The original intention was to assign Kali the static IPv4 address `10.0.0.2`.
@@ -415,43 +430,6 @@ ping -c 4 8.8.8.8
 >
 > **Filename:** `screenshots/09-internet-connectivity.png`
 
-### 8.4 Test DNS Resolution
-
-```bash
-getent hosts kali.org
-```
-
-### 📷 Screenshot: DNS Resolution
-
-![DNS resolution test](screenshots/10-dns-resolution.png)
-
-> **Add your screenshot here:** Capture the actual DNS lookup result.
->
-> **Filename:** `screenshots/10-dns-resolution.png`
-
-### 8.5 Verify Nmap
-
-```bash
-nmap --version
-```
-
-This confirms whether Nmap is installed and available in the Kali environment.
-
-### 8.6 Verify Metasploitable
-
-Confirm that Metasploitable is attached to the intended lab network and identify its IP address before performing any network tests.
-
-### 📷 Screenshot: Metasploitable Network Configuration
-
-![Metasploitable network configuration](screenshots/11-metasploitable-network.png)
-
-> **Add your screenshot here:** Capture the target VM's VirtualBox network settings and, if available, its actual IP address. Do not assume an address without checking.
->
-> **Filename:** `screenshots/11-metasploitable-network.png`
-
-Test Kali-to-target communication only after confirming both VMs are attached to the intended lab network.
-
----
 
 ## Step 9: Create a Baseline Snapshot
 
@@ -610,9 +588,7 @@ screenshots/
 ├── 07-kali-ip-configuration.png
 ├── 08-gateway-connectivity.png
 ├── 09-internet-connectivity.png
-├── 10-dns-resolution.png
-├── 11-metasploitable-network.png
-└── 12-clean-baseline-snapshot.png
+└── 10-clean-baseline-snapshot.png
 ```
 
 **Screenshot guidelines:**
